@@ -1,0 +1,21 @@
+---
+- name: Update Debian-based servers
+  hosts: apthosts
+  become: yes
+  become_user: root
+  tasks:
+    - apt:
+#        name: Running APT
+        update_cache: yes
+        upgrade: full
+#       upgrade: dist
+        autoremove: yes
+- name: Update Redhat-based servers
+  hosts: yumhosts
+  become: yes
+  become_user: root
+  tasks:
+    - dnf:
+        update_cache: yes
+        name: "*"
+        state: latest
