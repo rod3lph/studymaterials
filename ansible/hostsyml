@@ -2,10 +2,10 @@ all:
   children:
     physicalsvr:
       hosts:
-        proxmox:
+        phv1:
           ansible_host: 192.168.200.201
           ansible_python_interpreter: /usr/bin/python3
-        ubchromebox:
+        phd1:
           ansible_host: 192.168.200.238
           ansible_python_interpreter: /usr/bin/python3
     virtsvr:
